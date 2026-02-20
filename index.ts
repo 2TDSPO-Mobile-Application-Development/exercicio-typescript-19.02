@@ -33,3 +33,17 @@ const produtos: Produto[] = [
     emEstoque: true,
   }
 ];
+
+/* 4.3 - Crie a função exibirProduto
+A função recebe um Produto e devolve uma string formatada.*/
+function exibirProduto(produto: Produto): string {
+  // Formatar o preço no padrão brasileiro
+  const precoFormatado = produto.preco.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  });
+  // Define ícone e texto conforme disponibilidade
+  const status = produto.emEstoque ? "✅ Disponível" : "❌ Indisponível";
+  // Retorna a string final
+  return `[${produto.categoria}] ${produto.nome} - ${precoFormatado} ${status}`;
+}
