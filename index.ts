@@ -47,3 +47,10 @@ function exibirProduto(produto: Produto): string {
   // Retorna a string final
   return `[${produto.categoria}] ${produto.nome} - ${precoFormatado} ${status}`;
 }
+
+/* 4.4 - Percorra o array com um loop
+Use um for...of para percorrer cada produto e exibir no console. */
+console.log("-=== PRODUTOS ===-\n");
+for (const produto of produtos) {
+  console.log(exibirProduto(produto));
+}
